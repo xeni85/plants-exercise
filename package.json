@@ -11,8 +11,18 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "nodemon": "^2.0.22"
+    "express-react-views": "^0.11.0",
+    "nodemon": "^2.0.22",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
-  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xeni85/plants-exercise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xeni85/plants-exercise/issues"
+  },
+  "homepage": "https://github.com/xeni85/plants-exercise#readme",
   "description": ""
 }
