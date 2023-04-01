@@ -14,7 +14,9 @@ app.get('/fruits/', (req, res) => {
 });
 
 app.get('/fruits/:indexOfFruitsArray', (req, res) => {
-    res.render('Show');
+    res.render('Show', {
+        fruit: fruits[req.params.indexOfFruitsArray]
+    });
 });
 
 app.listen(3000, () => {
