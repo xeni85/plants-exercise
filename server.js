@@ -10,7 +10,7 @@ const fruits = require('./models/fruits');
 
 
 app.get('/fruits/', (req, res) => {
-    res.send(fruits);
+    res.render('Index', {fruits: fruits});
 });
 
 app.get('/fruits/:indexOfFruitsArray', (req, res) => {
