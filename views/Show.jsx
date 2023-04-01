@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+const React = require('react');
 
-export class Show extends Component {
+export class Show extends React.Component {
   render() {
     const fruit = this.props.fruit;
     return (

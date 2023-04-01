@@ -18,6 +18,10 @@ app.use(express.urlencoded({extended:false}));
 app.get('/fruits/', (req, res) => {
     res.render('Index', {fruits: fruits});
 });
+app.get('/fruits/new', (req, res) => {
+    res.render('New');
+});
+
 
 app.get('/fruits/:indexOfFruitsArray', (req, res) => {
     res.render('Show', {
@@ -25,13 +29,23 @@ app.get('/fruits/:indexOfFruitsArray', (req, res) => {
     });
 });
 
-app.get('/fruits/new', (req, res) => {
-    res.render('New');
+app.post('/fruits', (req, res)=>{
+    if(req.body.readyToEat === 'on'){ //if checked, req.body.readyToEat is set to 'on'
+        req.body.readyToEat = true;
+    } else { //if not checked, req.body.readyToEat is undefined
+        req.body.readyToEat = false;
+    }
+    fruits.push(req.body);
+    res.redirect('/fruits'); //send the user back to /fruits
 });
 
 app.post('/fruits', (req, res) => {
-    res.send('hi');
+    res.send(fruits);
 });
+
+
+
+
 
 app.listen(3000, () => {
     console.log('listening');
